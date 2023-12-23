@@ -7,6 +7,7 @@ from src.exception import CustomException
 import numpy as np 
 import pandas as pd 
 from sklearn.metrics import r2_score
+from sklearn.model_selection import GridSearchCV
 
 
 
@@ -29,6 +30,7 @@ def evaluate_model(X_train,y_train,X_test,y_test,models):
 
         for i in range(len(list(models))):
             model=list(models.values())[i]
+            
             model.fit(X_train,y_train) #train the model
 
             #make prediction
